@@ -103,28 +103,11 @@ images.forEach(image => {
 
 gallery.appendChild(fragment);
 
-gallery.addEventListener('mouseover', event => {
-  if (event.target && event.target.nodeName === 'IMG') {
-    event.target.style.transform = 'scale(1.1)';
-  }
-});
-
-gallery.addEventListener('mouseout', event => {
-  if (event.target && event.target.nodeName === 'IMG') {
-    event.target.style.transform = 'scale(1)';
-  }
-});
-
-gallery.addEventListener('click', event => {
-  if (event.target.nodeName === 'IMG') {
-    console.log(event.target.parentElement.href);
-  }
-});
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
+
 lightbox.on('shown.simplelightbox', function () {
   document.querySelector('.sl-wrapper').style.background = '#2E2F42';
 });
-lightbox;
